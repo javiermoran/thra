@@ -1,0 +1,29 @@
+{
+  "name": "Type",
+  "plural": "types",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "medals": {
+      "type": "hasMany",
+      "model": "Medal",
+      "foreignKey": "typeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

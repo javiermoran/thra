@@ -1,0 +1,37 @@
+{
+  "name": "Game",
+  "plural": "games",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    },
+    "orgId": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "organization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": "orgId"
+    },
+    "medals": {
+      "type": "hasMany",
+      "model": "Medal",
+      "foreignKey": "gameId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

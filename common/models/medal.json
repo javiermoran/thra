@@ -1,0 +1,49 @@
+{
+  "name": "Medal",
+  "plural": "medals",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "number",
+      "required": true
+    },
+    "picture": {
+      "type": "string",
+      "required": false
+    },
+    "typeId": {
+      "type": "string",
+      "required": true
+    },
+    "orgId": {
+      "type": "string",
+      "required": true
+    },
+    "gameId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "game": {
+      "type": "belongsTo",
+      "model": "Game",
+      "foreignKey": "gameId"
+    },
+    "type": {
+      "type": "hasOne",
+      "model": "Type",
+      "foreignKey": "typeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
